@@ -14,7 +14,7 @@
 * [IC卡密钥分散](ic-ka-mi-yao-fen-san.md)
 * [IC卡脚本安全相关](ic-ka-jiao-ben-an-quan-xiang-guan.md)
 * [其他金融算法](qi-ta-jin-rong-suan-fa.md)
-* [DP 数据准备说明](dp-shu-ju-zhun-bei-shuo-ming.md)
+* [数据准备说明](dp-shu-ju-zhun-bei-shuo-ming.md)
 * [个人化说明](ge-ren-hua-shuo-ming.md)
 
 ## 附录

@@ -1,3 +1,7 @@
+---
+description: 个人化(Personalization) 是将数据/应用写入到IC卡并让IC卡装载应用的过程
+---
+
 # 个人化说明
 
 > \[EMV Card Personalization Specification 2003\]
@@ -10,7 +14,7 @@ CBC无初始化向量,或者通常可以认为初始化向量为全 0x00
 
 KMC  
 
-CSN Chip Serial Number
+
 
 KEYDATA := KMC\_id\(6Byte\) \|\| CSN \(4Byte\)
 
@@ -47,5 +51,5 @@ ENC 即 K\_ENC 用于 IC卡认证,解密StoreData 数据
   * PAD = "0181"
   * SKU\_DEK使用ECB模式 加密密钥和敏感数据 eg PINBlock/ICC\_privateKey/UDK
 
-ℹ 个人化设备使用TK\_from\_DP 转加密为 SKU\_XXX ,将敏感数据交付给卡片
+ℹ 个人化设备使用TK\_from\_DP 转加密为 SKU\_XXX ,将敏感数据从DP交付给卡片
 
