@@ -1,7 +1,5 @@
 # 常见缩略词
 
-## 
-
 ### SMI 
 
 * Secure Messaging Integrity 
@@ -172,7 +170,10 @@ IC卡交易行为
 
 * 维萨 全球第一大信用卡组织
 
+### NIST
 
+* National Institute of Standards and Technology
+* 美国国家标准与技术研究院
 
 ### ANSI
 
@@ -194,7 +195,7 @@ IC卡交易行为
 ### TK
 
 * Transport Key
-* 传输\(加密\)密钥
+* 传输\(加密\)密钥,一般指 DP系统与个人化系统协商的密钥
 
 ### KEK 
 
@@ -222,14 +223,18 @@ IC卡交易行为
 * 高级数据加密标准,用于替代DES
 * 又名 `Rijdael`
 
-### RC4 
+### RC4
 
-* Rivest Cipher 4
+* [Rivest Cipher](https://en.wikipedia.org/wiki/RC_algorithm) 4
+* RC 2/3/4/5/6
+* RC4 一种流加密算法,已被认为是不安全的
+* 对称算法
 
-### MD 
+### MD5 
 
-* Message Digest
-* MD4/MD5  已被认为是不安全的
+* Message Digest 5
+* MD 2/4/5/6
+* MD2/MD4/[MD5](https://en.wikipedia.org/wiki/MD5)  已被认为是不安全的
 * 消息摘要算法
 
 ### SHA
@@ -242,12 +247,23 @@ IC卡交易行为
 ### RSA 
 
 * Asymmetric cryptographic algorithm invented by Rivest, Shamir, andAdleman 
-* 一直非对称算法, 是以三位发明者名字的首字母作为名称
+* 一种非对称算法, 是以三位发明者名字的首字母作为名称
 
 ### DH 
 
 * Diffie-Hellman
-* 一种非对称算法,主要用于密钥交换,一般会和其他算法融合
+* 一种非对称算法,以发明者名字命名, 通常主要用于密钥交换,一般会和其他算法融合
+* 例如ECDH
+
+### DSA
+
+* Digital Signature Algorithm
+* 一种签名算法, NIST 制定的DSS
+
+### DSS
+
+* Digital Signature Standard
+* 数字签名标准\(NIST\)
 
 ### ECC 
 

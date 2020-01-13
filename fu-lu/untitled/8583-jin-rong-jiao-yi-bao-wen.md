@@ -18,3 +18,5 @@ bitmap 方式，有64bit 和 128bit两种
 * 64 Message authentication code \(MAC\) field      b ..16        存放MAC值
 * 128 Message authentication code \(MAC\) field    b ..16   【如果有】
 
+
+
