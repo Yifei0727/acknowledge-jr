@@ -25,8 +25,8 @@
 * UDK
   * Union Divers Key 
   * 唯一离散密钥，即卡片密钥
-* KMU
-  * ...
+* KMU KMC
+  * DES Master Key for Personalization Session Keys
 * UN
   * Unperdictable Number
 * CVR
@@ -86,6 +86,8 @@ ICC 集成电路卡\(Integrated Circuit\(s\) Card\)
 
 卡组织（金融机构）
 
+ISO International Organization for Standardization
+
 EMV
 
 PBOC
@@ -128,7 +130,7 @@ SHA Secure Hash Algorithm
 
 ECC
 
-RSA
+RSA Asymmetric cryptographic algorithm invented by Rivest, Shamir, andAdleman 
 
 DH
 
