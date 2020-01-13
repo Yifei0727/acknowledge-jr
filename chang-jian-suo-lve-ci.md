@@ -75,14 +75,14 @@ ICC 集成电路卡\(Integrated Circuit\(s\) Card\)
   * Primary Account Number
   * 主账号
   * 多指代完整的卡片账号
-  * 联网联合规范中 TAG为 \`5A\`
+  * 联网联合规范中 TAG为 `5A`
 * PIN
   * Personal Identification Number
   * 个人身份识别码, 通俗意义的客户密码
 * SN
   * Serial Number
   * 序列号/序号
-  * \`5F34\`
+  * `5F34`
 
 卡组织（金融机构）
 
@@ -104,11 +104,47 @@ DEA Data Encryption Algorithm des
 
 TDEA The Triple _Data Encryption_ Algorithm desede
 
-Advanced _Encryption_ Standard \(AES\)
-
 发卡数据准备（DP Data Preparation）与个人化（Personalization）
 
 TK Transport Key
 
 KEK Key Exchange Key
+
+
+
+KDF: Key Derivation Function
+
+PRG pseudo-random generator
+
+DES Data Encryption Standard
+
+AES Advanced Encryption Standard
+
+RC4 Rivest Cipher 4
+
+MD Message Digest
+
+SHA Secure Hash Algorithm
+
+ECC
+
+RSA
+
+DH
+
+
+
+ECB
+
+CBC
+
+CFB
+
+OFB
+
+GCM
+
+XTS
+
+
 

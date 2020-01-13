@@ -149,9 +149,7 @@ EMV 标准中提供两种计算方法
 * VISA规范中  使用 X9.19 即EMV方法2
 * MasterCard  M/Chip4 使用X9.9 即EMV方法1
 * 银联卡 PBOC2.0 使用X9.9 即EMV方法1   
-* 银联卡 PBOC3.0 国密 使用X9.9 但算法更换为SM4
-
-  ARQC 8字节 是由结果的 16Byte分成左右两部分并异或的结果
+* 银联卡 PBOC3.0 国密 使用X9.9 但算法更换为SM4,取左侧 8字节
 
 ### IC卡PIN修改 PIN Change
 
