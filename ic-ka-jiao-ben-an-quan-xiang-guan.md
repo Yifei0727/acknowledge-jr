@@ -6,7 +6,7 @@ IC卡
 
 标准 PBOC EMV VISA MasterCard
 
-### 卡片应用密文认证\([ARQC](chang-jian-suo-lve-ci.md#ac)\)
+### 卡片应用密文认证\(ARQC\)
 
 IC卡包含的知识很多，这里只对验卡（交易）阶段做说明
 
@@ -100,11 +100,11 @@ IC卡包含的知识很多，这里只对验卡（交易）阶段做说明
 
 * EMV4.1 ARPC方式一（EMV4.1 Book2 8.2.1）
 
-  将 计算的 ARQC【8Byte】与 [ARC](chang-jian-suo-lve-ci.md#arc)\|\|0【6Byte】异或，使用过程密钥SK\[ac\]加密，结果就是 ARPC
+  将 计算的 ARQC【8Byte】与 ARC\|\|0【6Byte】异或，使用过程密钥SK\[ac\]加密，结果就是 ARPC
 
 * EMV4.1 ARPC方式二 （EMV4.1 Book2 8.2.2）
 
-  使用到额外的 [CSU](chang-jian-suo-lve-ci.md#csu)（卡片状态 Card Status Update）4Byte 以及[PAD](chang-jian-suo-lve-ci.md#pad)（ 专用数据 Proprietary Authentication Data ） 0-8Byte
+  使用到额外的 CSU（卡片状态 Card Status Update）4Byte 以及专用数据（ Proprietary Authentication Data ） 0-8Byte
 
   将 ARQC、 CSU和PAD 拼接，按照[ISO/IEC 9797-1 Algorithm 3](https://en.wikipedia.org/wiki/ISO/IEC_9797-1#MAC_algorithm_3), and the parameter s is set to 4进行MAC
 
@@ -114,9 +114,9 @@ IC卡包含的知识很多，这里只对验卡（交易）阶段做说明
 
 ARPC由ARQC生成，具体实现方法如下：
 
-* a\) 该方式同EMV4.1 ARPC方式一
+* a\) 将应用密文与授权响应密文的响应代码（tag为91子域的后面部分）进行异或。应用密文包括在上传的请求报文tag为9F26的子域域中，通常是ARQC，在一些特殊情况下是AAC。授权响应密文的响应代码在执行异或前左对齐后面补6个字节0x00。
 
-  将应用密文与授权响应密文的响应代码（tag为`91`子域的后面部分）进行异或。应用密文包括在上传的请求报文tag为`9F26`的子域域中，通常是[ARQC](chang-jian-suo-lve-ci.md#ac)，在一些特殊情况下是[AAC](chang-jian-suo-lve-ci.md#aac)。授权响应密文的响应代码在执行异或前左对齐后面补6个字节0x00。
+  该方式同EMV4.1 ARPC方式一
 
 * b\) SM4算法模式：上述异或的结果是一个8字节的数据块D1，将数据块D1扩充成16字节，不足16字节的右边补0x00,对D1用过程密钥采用SM4密钥计算得到16个字节的HK。取16字节的HK的左边8字节HKL，作为8字节ARPC。
 

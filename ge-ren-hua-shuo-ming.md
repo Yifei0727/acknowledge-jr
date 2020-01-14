@@ -12,39 +12,35 @@ description: 个人化(Personalization) 是将数据/应用写入到IC卡并让I
 
 CBC无初始化向量,或者通常可以认为初始化向量为全 0x00
 
-| 名称 | 说明 |
-| :--- | :--- |
-| KMC | 卡片主控密钥 |
-| K | 卡片密钥, 由 KMC 分散得到 |
-| SKU | 卡片会话密钥/过程密钥,由K 离散得到 |
-| ENC | 加密用途\(报文数据/通信数据\) |
-| MAC | 鉴别用途\(报文鉴别\) |
-| DEK | 加密用途\(敏感数据\) |
+KMC  
 
-### 计算卡片密钥\(通信\)
 
-KEYDATA := KMC\_id\(6Byte\) \|\| [CSN](chang-jian-suo-lve-ci.md#csn) \(4Byte\)
+
+KEYDATA := KMC\_id\(6Byte\) \|\| CSN \(4Byte\)
+
+GeneLeft := KEYDATA\[2:8\] \|\| PAD\_LEFT
+
+GeneRight := KEYDATA\[2:8\] \|\| PAD\_RIGHT
 
 * ENC
-  * 用于 IC卡认证,解密StoreData 数据
-  * PAD\_L := "F001"
-  * PAD\_R := "0F01"
+  * LEFT:PAD = "F001"
+  * RIGHT:PAD = "0F01"
 * MAC
-  * PAD\_L :="F002"
-  * PAD\_R := "0F02"
+  * LEFT:PAD = "F002"
+  * RIGHT:PAD = "0F02"
 * DEK
-  * PAD\_L := "F003"
-  * PAD\_R := "0F03"
+  * LEFT:PAD = "F003"
+  * RIGHT:PAD = "0F03" 
 
-分散因子 `K_GENE_L` := KEYDATA\[2:8\] \|\| PAD\_L
+ENC 即 K\_ENC 用于 IC卡认证,解密StoreData 数据
 
-分散因子 `K_GENE_R` := KEYDATA\[2:8\] \|\| PAD\_R
-
-使用`卡片主控密钥`加密`分散因子`,即得到对应的`卡片密钥(通信)` 三把,分别标记为 `K_ENC` `K_MAC` `K_DEK`
-
-### 计算过程密钥
+计算过程密钥
 
 > Derivation Data for Session Keys  \(DES CBC mode\)
+>
+> Gene\_SKU := PAD\(2Byte\)\|\|  初始化时卡片产生的随机数sequence counter\(2Byte\) \|\| 000000...0000\(12Byte\)
+>
+> K\_XXK  -Gene\_SKU-&gt; SKU\_XXK
 
 * ENC
   * PAD = "0182"
@@ -55,9 +51,5 @@ KEYDATA := KMC\_id\(6Byte\) \|\| [CSN](chang-jian-suo-lve-ci.md#csn) \(4Byte\)
   * PAD = "0181"
   * SKU\_DEK使用ECB模式 加密密钥和敏感数据 eg PINBlock/ICC\_privateKey/UDK
 
-分散因子 SKU := PAD\(2Byte\) \|\| 初始化时卡片产生的随机数sequence counter\(2Byte\) \|\| 000000...0000\(12Byte\)
-
-使用 `K` 对于加密`分散因子` 即可对应的`过程密钥`,三把 分别标记为 `SKU_ENC` `SKU_MAC` `SKU_DEK`
-
-ℹ 个人化设备使用[TK](chang-jian-suo-lve-ci.md#tk)\_from\_DP 转加密为 SKU\_XXX ,将敏感数据从DP交付给卡片
+ℹ 个人化设备使用TK\_from\_DP 转加密为 SKU\_XXX ,将敏感数据从DP交付给卡片
 

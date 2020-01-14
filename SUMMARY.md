@@ -19,6 +19,10 @@
 
 ## 附录
 
+* [什么是HSM](fu-lu/shen-me-shi-hsm/README.md)
+  * [HSM 简介](fu-lu/shen-me-shi-hsm/hsm-jian-jie.md)
+  * [HSM 与 软算法的优缺点](fu-lu/shen-me-shi-hsm/hsm-yu-ruan-suan-fa-de-you-que-dian.md)
+  * [HSM 密钥体系](fu-lu/shen-me-shi-hsm/hsm-mi-yao-ti-xi.md)
 * [Untitled](fu-lu/untitled/README.md)
   * [8583金融交易报文](fu-lu/untitled/8583-jin-rong-jiao-yi-bao-wen.md)
   * [数据加密规则\(标准\)](fu-lu/untitled/shu-ju-jia-mi-gui-ze-biao-zhun.md)
