@@ -8,9 +8,7 @@
 >
 > 【银联卡发卡行标识代码及卡号 Q/CUP 002-2006】
 
-Luhn 算法
-
-
+[Luhn](https://baike.baidu.com/item/Luhn%E7%AE%97%E6%B3%95/22799984?fr=aladdin) 算法
 
 #### 卡片磁道信息
 
