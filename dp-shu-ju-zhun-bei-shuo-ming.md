@@ -12,7 +12,7 @@ DP阶段
  加密 DES、RSA密钥、PIN密文必需使用TDES的ECB模式
 ```
 
-外部认证指令 需要MAC和加密时 使用 CBC模式，IV 全0 ，强制填充 `0x80`
+外部认证指令 需要MAC和加密时 使用 [CBC](chang-jian-suo-lve-ci.md#cbc)模式，[IV](chang-jian-suo-lve-ci.md#iv) 全0 ，强制填充 `0x80`
 
 * 外部认证
 
